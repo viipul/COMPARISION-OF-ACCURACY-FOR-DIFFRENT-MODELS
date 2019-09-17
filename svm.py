@@ -32,7 +32,7 @@ print(cm)
 #Accuracy of model
 from sklearn.metrics import accuracy_score
 print(accuracy_score(y_test,y_pred)*100,'%')
-# Visualising the Logistic Regression results
+# Visualising the SVM results
 from matplotlib.colors import ListedColormap
 x_set,y_set= X_test,y_test
 x1,x2=np.meshgrid(np.arange(start=x_set[:,0].min()-1, stop=x_set[:,0].max()+1, step=0.01),
@@ -44,7 +44,7 @@ plt.xlim(x2.min(),x2.max())
 for i,j in enumerate(np.unique(y_pred)):
     plt.scatter(x_set[y_set==j,0],x_set[y_set==j,1],
                 c=ListedColormap(('red','green'))(i),label=j)
-plt.title('TEST SET FOR LOGISTIC REGRESSION')
+plt.title('TEST SET FOR SVM')
 plt.xlabel('Age')
 plt.ylabel('Estimated Salary')
 plt.legend()
